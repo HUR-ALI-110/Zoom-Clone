@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zoom Clone</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/3c8cb2bbd7.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://unpkg.com/peerjs@1.4.7/dist/peerjs.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
+
+    <script>
+        const ROOM_ID = ("<%= roomId %>");
+    </script>
+</head>
+
+<body>
+    <div class="main">
+        <div class="main_left">
+            <div class="main_video">
+                <div id="video-grid">
+
+                </div>
+            </div>
+            <div class="main_controls">
+                <div class="main_controls_block">
+                    <div onclick="muteUnmute()" class="main_controls_button" id="main_mute_button">
+                        <i class="fa-solid fa-microphone"></i>
+                        <span>Mute</span>
+                    </div>
+                    <div onclick="playStop()" class="main_controls_button main_video_button">
+                        <i class="fas fa-video"></i>
+                        <span>Stop Video</span>
+                    </div>
+                    <div class="main_controls_block">
+                        <div class="main_controls_button">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Security</span>
+                        </div>
+                        <div class="main_controls_button">
+                            <i class="fas fa-user-friends"></i>
+                            <span>Participant</span>
+                        </div>
+                        <div class="main_controls_button">
+                            <i class="fas fa-comment-alt"></i>
+                            <span>Chats</span>
+                        </div>
+                    </div>
+                    <div class="main_controls_block">
+                        <div class="main_controls_button">
+                            <span class="leave_meeting">Leave Meeting</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main_right">
+            <div class="main_header">
+                <h1>Chats</h1>
+            </div>
+            <div class="main_chat_window">
+                <ul class="messages">
+
+                </ul>
+            </div>
+            <div class="main_message_container">
+                <input type="text" id="chat_message" placeholder="Type message here...">
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
